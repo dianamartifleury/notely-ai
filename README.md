@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Notely AI
 
-## Getting Started
+> AI-powered note management system built with Next.js, TypeScript and MongoDB.
 
-First, run the development server:
+Notely AI is a fullstack web application that allows users to create, manage, search, categorize, and summarize notes using a modular API architecture.
+
+---
+
+## 🚀 Live Demo
+
+(Coming soon – deployed on Vercel)
+
+---
+
+## ✨ Features
+
+- ✅ Create, read and delete notes (CRUD)
+- 🔍 Real-time text search
+- 🏷 Filter notes by category
+- 🧠 AI-style note summarization (persisted in database)
+- ⏳ Smart loading states with UX feedback
+- 🛑 Delete confirmation
+- 🎨 Clean SaaS-style UI
+- 📦 REST API architecture using Next.js App Router
+
+---
+
+## 🧠 AI Summary System
+
+Each note can be summarized via a dedicated `/api/summarize` endpoint.
+
+The summary:
+- Is generated via server-side logic
+- Is persisted in MongoDB
+- Survives page reloads
+- Follows a scalable architecture ready for integration with real AI APIs (e.g., OpenAI)
+
+---
+
+## 🏗 Architecture
+
+app/
+├── api/
+│ ├── notes/
+│ │ └── route.ts
+│ └── summarize/
+│ └── route.ts
+├── page.tsx
+lib/
+└── mongodb.ts
+models/
+└── Note.ts
+
+
+The application separates:
+
+- CRUD operations
+- AI summarization logic
+- Database connection
+- UI logic
+
+---
+
+## 🛠 Tech Stack
+
+- **Next.js 16 (App Router)**
+- **TypeScript**
+- **MongoDB Atlas**
+- **Mongoose**
+- **REST API Routes**
+- **React Hooks**
+- **Client/Server architecture separation**
+
+---
+
+## 📦 Installation
+
+Clone the repository:
 
 ```bash
+git clone https://github.com/your-username/notely-ai.git
+cd notely-ai
+Install dependencies:
+
+npm install
+Create a .env.local file:
+
+MONGODB_URI=your_mongodb_connection_string
+Run development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🎯 What This Project Demonstrates
+Fullstack architecture design
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+API route structuring
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Database schema modeling
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Asynchronous state handling
 
-## Learn More
+UX-driven development
 
-To learn more about Next.js, take a look at the following resources:
+Clean component organization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Scalable structure for AI integrations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📌 Future Improvements
+Real AI API integration (OpenAI)
 
-## Deploy on Vercel
+Authentication system
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Edit note feature
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Drag & drop note ordering
+
+Dark mode
+
+Deployment optimizations
+
+👩‍💻 Author
+Built by Diana
+Fullstack Developer 
