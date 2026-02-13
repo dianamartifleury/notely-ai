@@ -1,122 +1,178 @@
-# 🧠 Notely AI
+🧠 Notely AI
 
-> AI-powered note management system built with Next.js, TypeScript and MongoDB.
+AI-powered fullstack note management application
 
-Notely AI is a fullstack web application that allows users to create, manage, search, categorize, and summarize notes using a modular API architecture.
+🔗 Live Demo: https://TU-URL-DE-VERCEL.vercel.app
 
----
+📦 Repository: https://github.com/dianamartifleury/notely-ai
 
-## 🚀 Live Demo
+📌 Project Overview
 
-(Coming soon – deployed on Vercel)
+Notely AI is a production-ready fullstack web application built to demonstrate modern development practices using Next.js, TypeScript and MongoDB.
 
----
+The application allows users to manage notes with category filtering, real-time search and AI-style summaries, while showcasing clean UI/UX, state management and backend integration.
 
-## ✨ Features
+This project reflects:
 
-- ✅ Create, read and delete notes (CRUD)
-- 🔍 Real-time text search
-- 🏷 Filter notes by category
-- 🧠 AI-style note summarization (persisted in database)
-- ⏳ Smart loading states with UX feedback
-- 🛑 Delete confirmation
-- 🎨 Clean SaaS-style UI
-- 📦 REST API architecture using Next.js App Router
+End-to-end fullstack development
 
----
+API design and database persistence
 
-## 🧠 AI Summary System
+Production deployment with CI/CD
 
-Each note can be summarized via a dedicated `/api/summarize` endpoint.
+UX-focused interface improvements
 
-The summary:
-- Is generated via server-side logic
-- Is persisted in MongoDB
-- Survives page reloads
-- Follows a scalable architecture ready for integration with real AI APIs (e.g., OpenAI)
+Clean code structure and scalability mindset
 
----
+🚀 Key Features
 
-## 🏗 Architecture
+✍️ Create, edit and delete notes
 
-app/
-├── api/
-│ ├── notes/
-│ │ └── route.ts
-│ └── summarize/
-│ └── route.ts
-├── page.tsx
-lib/
-└── mongodb.ts
-models/
-└── Note.ts
+🔎 Real-time search functionality
 
+🏷️ Category filtering system
 
-The application separates:
+🧠 AI summary generation
 
-- CRUD operations
-- AI summarization logic
-- Database connection
-- UI logic
+💾 Summary persistence in MongoDB
 
----
+🌙 Dark / Light mode toggle
 
-## 🛠 Tech Stack
+✨ Smooth UI animations
 
-- **Next.js 16 (App Router)**
-- **TypeScript**
-- **MongoDB Atlas**
-- **Mongoose**
-- **REST API Routes**
-- **React Hooks**
-- **Client/Server architecture separation**
+📊 Live statistics dashboard
 
----
+🔄 Automatic deployment via GitHub + Vercel
 
-## 📦 Installation
+🛠 Tech Stack
+Frontend
 
-Clone the repository:
+Next.js (App Router)
 
-```bash
-git clone https://github.com/your-username/notely-ai.git
+TypeScript
+
+React Hooks (useState, useEffect)
+
+Dynamic inline styling
+
+Conditional rendering
+
+Client-side state synchronization
+
+Backend
+
+Next.js API Routes
+
+MongoDB Atlas
+
+Mongoose ODM
+
+RESTful architecture
+
+CRUD operations
+
+Server-side summary persistence
+
+Deployment & DevOps
+
+Vercel (Production Deployment)
+
+GitHub integration
+
+Continuous Deployment (CI/CD)
+
+Environment variable management
+
+🧠 AI Summary Logic
+
+The application includes a backend summarization endpoint that:
+
+Receives note text
+
+Generates a short AI-style summary
+
+Stores the summary in MongoDB
+
+Updates the UI in real-time
+
+This demonstrates:
+
+Backend processing logic
+
+Database update operations
+
+Optimistic UI updates
+
+Loading state management
+
+Error handling
+
+📊 Dashboard
+
+The statistics panel dynamically calculates:
+
+Total notes
+
+Total AI summaries generated
+
+Total categories
+
+This simulates real SaaS-style dashboard metrics and data-driven UI components.
+
+🌙 UX & UI Enhancements
+
+Dark mode with dynamic styling
+
+Smooth card animations
+
+Hover effects and micro-interactions
+
+Loading states for async operations
+
+Confirmation before destructive actions
+
+Clean and modern layout
+
+📦 Local Installation
+git clone https://github.com/dianamartifleury/notely-ai.git
 cd notely-ai
-Install dependencies:
-
 npm install
+
+
 Create a .env.local file:
 
 MONGODB_URI=your_mongodb_connection_string
-Run development server:
+
+
+Run locally:
 
 npm run dev
+
+🔄 Deployment
+
+The project is connected to GitHub and automatically deployed via Vercel.
+
+Each push to the main branch triggers a new production deployment.
+
+This setup reflects real-world development workflows.
+
 🎯 What This Project Demonstrates
-Fullstack architecture design
 
-API route structuring
+Fullstack application architecture
 
-Database schema modeling
+REST API design
 
-Asynchronous state handling
+Database integration
 
-UX-driven development
+Asynchronous state management
 
-Clean component organization
+UI/UX refinement
 
-Scalable structure for AI integrations
+Production-ready deployment
 
-📌 Future Improvements
-Real AI API integration (OpenAI)
-
-Authentication system
-
-Edit note feature
-
-Drag & drop note ordering
-
-Dark mode
-
-Deployment optimizations
+Clean project organization
 
 👩‍💻 Author
-Built by Diana
-Fullstack Developer 
+
+Developed by Diana Marti Fleury
+Fullstack Developer
