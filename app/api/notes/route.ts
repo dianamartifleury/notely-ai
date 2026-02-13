@@ -38,3 +38,31 @@ export async function DELETE(request: Request) {
   return NextResponse.json({ message: "Note deleted" });
 }
 
+export async function PUT(request: Request) {
+  await connectDB();
+
+  const body = await request.json();
+  const { id, text, category } = body;
+
+  if (!id) {
+    return NextResponse.json(
+      { error: "ID is required" },
+      { status: 400 }
+    );
+  }
+
+  const updatedNote = await Note.findByIdAndUpdate(
+    id,
+    { text, category },
+    { new: true }
+  );
+
+  if (!updatedNote) {
+    return NextResponse.json(
+      { error: "Note not found" },
+      { status: 404 }
+    );
+  }
+
+  return NextResponse.json(updatedNote);
+}

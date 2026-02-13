@@ -2,25 +2,50 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import { Note } from "@/models/Note";
 
+// GET
+export async function GET() {
+  await connectDB();
+  const notes = await Note.find().sort({ createdAt: -1 });
+  return NextResponse.json(notes);
+}
+
+// POST
 export async function POST(request: Request) {
   await connectDB();
 
   const body = await request.json();
-  const { id, text } = body;
+  const { text, category } = body;
 
-  if (!id || !text) {
-    return NextResponse.json(
-      { error: "ID and text are required" },
-      { status: 400 }
-    );
-  }
+  const newNote = await Note.create({
+    text,
+    category,
+  });
 
-  const words = text.split(" ");
-  const summary = words.slice(0, 5).join(" ") + "...";
+  return NextResponse.json(newNote);
+}
+
+// DELETE
+export async function DELETE(request: Request) {
+  await connectDB();
+
+  const body = await request.json();
+  const { id } = body;
+
+  await Note.findByIdAndDelete(id);
+
+  return NextResponse.json({ message: "Deleted" });
+}
+
+// PUT (EDIT)
+export async function PUT(request: Request) {
+  await connectDB();
+
+  const body = await request.json();
+  const { id, text, category } = body;
 
   const updatedNote = await Note.findByIdAndUpdate(
     id,
-    { summary },
+    { text, category },
     { new: true }
   );
 
